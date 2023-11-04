@@ -9,6 +9,7 @@ export default async function fetchImages(
     const res = await fetch(url, {
       headers: {
         Authorization: env.PEXELS_API_KEY,
+        'Cache-Control': 'no-store'
       },
     });
     if (!res.ok) throw new Error("Fetch Images error! \n");
